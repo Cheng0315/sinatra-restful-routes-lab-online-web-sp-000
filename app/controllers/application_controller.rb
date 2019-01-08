@@ -11,13 +11,14 @@ class ApplicationController < Sinatra::Base
   end
 
   get "/recipes/:id" do
-    "HELLO"
+    @recipe = Recipe.find(params[:id])
+    erb :show
   end
 
   get "/new" do
     erb :new
   end
 
-
+  
 
 end
